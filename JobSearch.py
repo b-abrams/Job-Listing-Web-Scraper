@@ -1,3 +1,4 @@
+
 from IndeedJob import IndeedJob
 import IndeedSearch
 import webbrowser
@@ -26,4 +27,5 @@ for x in search(query, tld='com', lang='en', num=10, stop=1, pause=1):
         glassdoorLink = x
 
 indeed = IndeedSearch.execute(indeedLink)
-print(len(indeed))
+for i in indeed:
+    i.display()

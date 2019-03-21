@@ -1,3 +1,4 @@
+
 class IndeedJob:
     def __init__(self, jobTitle: str, company: str, jobType: str, jobDescriptiton: str,  link: str):
         self.jobTitle = jobTitle
@@ -7,19 +8,20 @@ class IndeedJob:
         self.link = link
 
     def getJobTitle(self):
-        return self.jobTitle.encode('utf-8')
+        return self.jobTitle.encode()
 
     def getCompany(self):
-        return self.company.encode('utf-8')
+        return self.company.encode()
 
     def getJobType(self):
-        return self.jobType.encode('utf-8')
+        return self.jobType.encode()
 
     def getJobDescription(self):
-        return self.jobDescription.encode('utf-8')
+        return self.jobDescription.encode()
 
     def getLink(self):
-        return self.link.encode('utf-8')
+        return self.link
 
     def display(self):
-        return (self.jobTitle + "\n\n").encode('utf-8') + (self.company + "\n\n").encode('utf-8') + (self.jobType + "\n\n").encode('utf-8') + (self.jobDescription + "\n\n").encode('utf-8') + self.link.encode('utf-8')
+        print(self.getJobTitle(),
+              self.getCompany(), self.getJobType(), sep="    ")
