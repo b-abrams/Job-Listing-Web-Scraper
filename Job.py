@@ -1,5 +1,5 @@
 
-class IndeedJob:
+class Job:
     def __init__(self, jobTitle: str, company: str, jobType: str, jobDescriptiton: str,  link: str):
         self.jobTitle = jobTitle
         self.company = company
@@ -21,6 +21,12 @@ class IndeedJob:
 
     def getLink(self):
         return self.link
+
+    def getSource(self):
+        if("indeed" in self.link):
+            return "Indeed"
+        if("glassdoor" in self.link):
+            return "Glassdoor"
 
     def display(self):
         print(self.getJobTitle(),
