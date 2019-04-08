@@ -1,5 +1,5 @@
 
-from IndeedJob import IndeedJob
+from Job import Job
 from multiprocessing import Pool, Manager
 import webbrowser
 import requests
@@ -25,7 +25,7 @@ def convertToIndeedJob(link):
     jobSoup = BeautifulSoup(requests.get(link,
                                          headers={'user-agent': 'Chrome/63.0.3239.132'}).content, 'lxml')
     try:
-        jobList.append(IndeedJob(jobSoup.find(
+        jobList.append(Job(jobSoup.find(
             'h3', class_="jobsearch-JobInfoHeader-title").text, jobSoup.find(
             'div', class_="icl-u-lg-mr--sm").text, jobSoup.find(
             'div', class_="jobsearch-JobMetadataHeader-item").text, jobSoup.find(

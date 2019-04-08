@@ -1,5 +1,5 @@
 
-from IndeedJob import IndeedJob
+from Job import Job
 import IndeedSearch
 import webbrowser
 import requests
