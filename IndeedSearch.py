@@ -57,4 +57,5 @@ def execute(link):
     q.map(convertToIndeedJob, jobLinks)
     q.terminate()
     q.join()
+
     return jobList

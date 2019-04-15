@@ -1,5 +1,6 @@
 
 class Job:
+
     def __init__(self, jobTitle: str, company: str, jobType: str, jobDescriptiton: str,  link: str):
         self.jobTitle = jobTitle
         self.company = company
@@ -22,12 +23,22 @@ class Job:
     def getLink(self):
         return self.link
 
-    def getSource(self):
+    def source(self):
         if("indeed" in self.link):
             return "Indeed"
         if("glassdoor" in self.link):
             return "Glassdoor"
 
+    def serialize(self):
+        return {
+            "jobTitle": self.getJobTitle(),
+            "company": self.getCompany(),
+            "jobType": self.getJobType(),
+            # "jobDescription": self.getJobDescription,
+            # "link": self.getLink(),
+            # "source": self.source()
+        }
+
     def display(self):
-        print(self.getJobTitle(),
-              self.getCompany(), self.getJobType(), sep="    ")
+        print(self.jobTitle,
+              self.company, self.jobType, sep="    ")
