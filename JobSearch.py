@@ -39,6 +39,6 @@ def execute(query: str):
 
 
 if __name__ == "__main__":
-    print(execute("Computer Science Internship California"))
+    print(execute("Computer Science Internship California")[0])
     # for i in execute("Computer Science Internship California"):
     #     i.display()

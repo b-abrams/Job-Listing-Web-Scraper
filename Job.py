@@ -9,16 +9,16 @@ class Job:
         self.link = link
 
     def getJobTitle(self):
-        return self.jobTitle.encode()
+        return self.jobTitle
 
     def getCompany(self):
-        return self.company.encode()
+        return self.company
 
     def getJobType(self):
-        return self.jobType.encode()
+        return self.jobType
 
     def getJobDescription(self):
-        return self.jobDescription.encode()
+        return self.jobDescription
 
     def getLink(self):
         return self.link
@@ -34,9 +34,9 @@ class Job:
             "jobTitle": self.getJobTitle(),
             "company": self.getCompany(),
             "jobType": self.getJobType(),
-            # "jobDescription": self.getJobDescription,
-            # "link": self.getLink(),
-            # "source": self.source()
+            "jobDescription": self.getJobDescription(),
+            "link": self.getLink(),
+            "source": self.source()
         }
 
     def display(self):
