@@ -13,7 +13,19 @@ def jobFormat(jobs: list):
         serialized.append(jobs[i].serialize())
     return serialized
 
-# Execute a job search using a given querey string
+# Execute a job search using a given query string
+"""
+Example
+
+query = Software Engineering Internship
+
+1. Google search is conducted for "Software Engineering Internship"
+
+2. First indeed and glassdoor results are saved. (only indeed link is used for now).
+
+3. IndeedSearch.py is executed and a list of jobs is returned
+
+"""
 def execute(query: str):
     indeedLink = ''
     glassdoorLink = ''
@@ -32,3 +44,5 @@ def execute(query: str):
     indeed = IndeedSearch.execute(indeedLink)
     return jobFormat(indeed)
 
+if __name__ == "__main__":
+    return execute(input("Enter Job Search Query"))
