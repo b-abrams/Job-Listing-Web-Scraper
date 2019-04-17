@@ -29,6 +29,7 @@ class Job:
         if("glassdoor" in self.link):
             return "Glassdoor"
 
+    #Convert Job parameters to dict format for cleaner JSON seerialisation
     def serialize(self):
         return {
             "jobTitle": self.getJobTitle(),
@@ -38,7 +39,3 @@ class Job:
             "link": self.getLink(),
             "source": self.source()
         }
-
-    def display(self):
-        print(self.jobTitle,
-              self.company, self.jobType, sep="    ")

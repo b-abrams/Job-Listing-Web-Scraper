@@ -1,12 +1,17 @@
-from flask import Flask
+from flask import Flask, request, jsonify
 import JobSearch
 app = Flask(__name__)
 
-
 @app.route("/", methods=["GET"])
 def serve():
-    jobs = JobSearch.execute("Computer Science Internship California")
-    return str(jobs[0])
+    req = request.args.get("search")
+    jsonList = []
+    for _ in list(JobSearch.execute(req)):
+        if(_ not in jsonList):
+          jsonList.append(_)
+    jobs = jsonify(jsonList)
+    jobs.headers.add('Access-Control-Allow-Origin', '*')
+    return jobs
 
 
 if __name__ == "__main__":

@@ -6,20 +6,15 @@ import requests
 from googlesearch import search
 from bs4 import BeautifulSoup
 
-
+#Take jobs retrieved from search and format them as dicts using serialize
 def jobFormat(jobs: list):
+    serialized = []
     for i in range(len(jobs)):
-        jobs[i] = jobs[i].serialize()
-    return jobs
+        serialized.append(jobs[i].serialize())
+    return serialized
 
-
+# Execute a job search using a given querey string
 def execute(query: str):
-    # major = "Computer Science"
-    # jobType = "Internship"
-    # location = "California"
-
-    # query = "Indeed Computer Science"
-
     indeedLink = ''
     glassdoorLink = ''
     for x in search(query, tld='com', lang='en', num=10, stop=1, pause=1):
@@ -37,8 +32,3 @@ def execute(query: str):
     indeed = IndeedSearch.execute(indeedLink)
     return jobFormat(indeed)
 
-
-if __name__ == "__main__":
-    print(execute("Computer Science Internship California")[0])
-    # for i in execute("Computer Science Internship California"):
-    #     i.display()
