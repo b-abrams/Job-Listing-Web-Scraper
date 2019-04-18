@@ -1,13 +1,13 @@
 # Job Listing Web Scraper
 
-## Dependencies (via pip install):
+Dependencies (via pip install):
 
-# beautifulsoup4
+beautifulsoup4
 
-# requests
+requests
 
-# google
+google
 
-# flask
+flask
 
-# certifi
+certifi
