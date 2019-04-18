@@ -45,4 +45,4 @@ def execute(query: str):
     return jobFormat(indeed)
 
 if __name__ == "__main__":
-    return execute(input("Enter Job Search Query"))
+    execute(input("Enter Job Search Query"))
