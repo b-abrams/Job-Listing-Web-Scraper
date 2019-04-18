@@ -27,9 +27,9 @@ query = Software Engineering Internship
 
 """
 def execute(query: str):
-    indeedLink = ''
-    glassdoorLink = ''
-    for x in search(query, tld='com', lang='en', num=10, stop=1, pause=1):
+    indeedLink = ""
+    glassdoorLink = ""
+    for x in search(query, tld='com', lang='en', num=10, stop=10, pause=1):
         if(len(indeedLink) > 1 and len(glassdoorLink) > 1):
             break
         if("indeed" in x):
@@ -40,9 +40,8 @@ def execute(query: str):
             if(len(glassdoorLink) > 1):
                 continue
             glassdoorLink = x
-
     indeed = IndeedSearch.execute(indeedLink)
     return jobFormat(indeed)
 
 if __name__ == "__main__":
-    execute(input("Enter Job Search Query"))
+    print(execute(input("Enter Seacrch Query:\n")))
