@@ -60,7 +60,7 @@ def convertToIndeedJob(link):
             'h3', class_="jobsearch-JobInfoHeader-title").text, jobSoup.find(
             'div', class_="icl-u-lg-mr--sm").text, jobSoup.find(
             'div', class_="jobsearch-JobMetadataHeader-item").text, jobSoup.find(
-            'div', class_="jobsearch-JobComponent-description").text, link))
+            'div', class_="jobsearch-jobDescriptionText").text, link))
     except:
         return
 
